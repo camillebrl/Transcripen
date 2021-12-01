@@ -23,11 +23,11 @@ class ConvertAudioToText():
     def single_split(self, from_min, to_min):
         t1 = from_min * 1000
         t2 = to_min * 1000
-        split_audio = self.audio[t1-300:t2+300]
+        split_audio = self.audio[t1-1000:t2+1000]
         if split_audio.duration_seconds == 0:
-            split_audio = self.audio[t1-300:t2]
+            split_audio = self.audio[t1-1000:t2]
             if split_audio.duration_seconds == 0:
-                split_audio = self.audio[t1:t2+300]
+                split_audio = self.audio[t1:t2+1000]
         try:
             os.remove("audio_exported.wav")
         except:
@@ -55,3 +55,6 @@ def speech_recognition_algorithm(filepath, language):
     audio_split = ConvertAudioToText(filepath, language)
     return audio_split.main()
 
+print(speech_recognition_algorithm("interview_olivierveran.wav", "fr-FR"))
+print(speech_recognition_algorithm("interview_angele.wav", "fr-FR"))
+print(speech_recognition_algorithm("interview_jonathancohen_vincentdedienne.wav", "fr-FR"))
