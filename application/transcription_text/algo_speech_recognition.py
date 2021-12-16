@@ -18,7 +18,7 @@ import speech_recognition as sr # librairie (https://github.com/Uberi/speech_rec
 class ConvertAudioToText():
     def __init__(self, filename, language):
         '''
-        Cette classe va découper le texte en sous-textes de 10s et va appeler au fur et à mesure l'API Google de Speech Recognition pour effectuer la transcription sur chaque bout de 10s. Effectivement, l'algorithme de Google a été entraîné sur des audios dont la taille varie entre 1 seconde à 20 secondes.
+        Cette classe va découper l'audio en sous-audios de 10s et va appeler au fur et à mesure l'API Google de Speech Recognition pour effectuer la transcription sur chaque bout de 10s. Effectivement, l'algorithme de Google a été entraîné sur des audios dont la taille varie entre 1 seconde à 20 secondes.
         - filename: chemin du fichier (exemple: audio/test.wav)
         - language: fr-FR for french, en-GB for english (UK), en-US for english (us), de-DE for german, es-ES for spanish, it-IT for italian
         '''
@@ -31,7 +31,7 @@ class ConvertAudioToText():
         '''
         - audio_file: chemin du fichier .wav exporté (ce n'est pas le fichier original, mais le fichier préprocessé qui a été sauvegardé
         '''
-        r = sr.Recognizer() # instancie un objet d etype Recognizer
+        r = sr.Recognizer() # instancie un objet de type Recognizer
         audio_ex = sr.AudioFile(audio_file) # nécessaire d'avoir ce format pour le Recognizer de Speech_recognition
         with audio_ex as source:
             audiodata = r.record(audio_ex) # lit l'audio
