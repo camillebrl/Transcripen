@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extraheader %}
+{{  block.super }}
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href={% static 'transcripen/layout/styles/layout.css' %} rel="stylesheet" type="text/css" media="all"> -->
+<script type="text/javascript" src="{% static 'user/js/loadingoverlay.min.js'%}" ></script>
+<script defer src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js">
+  </script>
+<script>
+		$(document).ready(function(){
+  			$('#btn_submit').click(function(){
+  				$('#form_submit').addClass("disabled");
+  				//$('#ajaxProgress').show();
+  				$('body').LoadingOverlay("show");
+  				$('#form_submit').submit();
+
+  		});
+  		});
+ </script>
+ 
+ 
+
+{% endblock %}
+{% block content %}
+<div id="pageintro" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+{% if form %}
+<form id="submit_form" action=""  enctype="multipart/form-data" method="POST">
+{% csrf_token %} 
+    {% for field in form %}
+    	<div class="fieldWrapper one_half" id="fieldWrapper">
+    	{{ field.errors }}
+    	{{ field.label_tag }}  {{ field }}
+    	</div>
+    {% endfor %}
+    
+<br>
+<div class="one_half first">
+<input id="btn_submit" class="btn" type="submit" name="submit" value="Transcrire" />
+</div>
+</form>
+{% else %}
+    <p> Erreur de champs. Contactez l'administrateur </p>
+{% endif %}
+
+<div id="ajaxProgress" class="spinner-border one first" role="status">
+	<h3>Merci de patienter...</h3>
+    <img src="{% static 'transcripen/images/demo/backgrounds/loader.gif' %}"/> 
+</div>
+</div>
+{% endblock %}

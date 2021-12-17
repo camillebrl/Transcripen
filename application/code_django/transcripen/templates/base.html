@@ -1,0 +1,122 @@
+{% load static%}
+<!DOCTYPE html>
+<!--
+Template Name: Yammoe
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="fr">
+<head>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link href={% static 'transcripen/layout/styles/layout.css' %} rel="stylesheet" type="text/css" media="all">
+	<link rel="stylesheet" media="screen"  href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css"/>
+	<meta http-equiv="content-type" content-type= "text/html" charset=utf-8 />
+    <title>Transcripen</title>
+    
+    {% block extraheader %}
+		<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+		{% endblock %}
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image:url({% static 'transcripen/images/demo/backgrounds/01.jpeg' %});"> 
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <div id="logo" class="fl_left"> 
+        <!-- ################################################################################################ -->
+        <h1><a href="{% url 'index' %}">Transcripen</a></h1>
+        <!-- ################################################################################################ -->
+      </div>
+     
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row0">
+    <div id="topbar" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <p class="fl_right nospace"><a class="btn" href="{% url 'retrieve' %}">Récupérer l'audio du stylo</a></p>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  
+          {% block content %}
+		{% block messages %}
+			{% if messages %}
+				<ul class="messagelist">{% for message in messages %}
+					<li {% if message.tags != 'error' and message.tags != 'debug' %} class='has-text-{{ message.tags}}' {% elif message.tags == 'error'%} class="has-text-danger" {%elif message.tags == 'debug'%} class="has-text-primary" style=''{%endif%}>{{ message|capfirst }}</li>
+					{% endfor %}</ul>
+					{% endif %}
+			{% endblock messages %}	{% endblock %}
+
+
+  <!-- ################################################################################################ -->
+</div>
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Bottom Background Image Wrapper -->
+<div class="bgded overlay" style="background-image:url({% static 'transcripen/images/demo/backgrounds/02.png' %});"> 
+  <!-- ################################################################################################ -->
+  <div class="wrapper row4">
+    <footer id="footer" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <div class="group btmspace-50">
+        <div class="one_quarter first">
+          <h6 class="heading">Article blog</h6>
+          
+        </div>
+      </div>
+      <!-- ################################################################################################ -->
+      <hr class="btmspace-50">
+      <!-- ################################################################################################ -->
+      <nav>
+        <ul class="nospace">
+          <li><a href="index.html"><i class="fas fa-lg fa-home"></i></a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- ################################################################################################ -->
+    </footer>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row5">
+    <div id="copyright" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
+      <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+<!-- End Bottom Background Image Wrapper -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+
+<script src={% static "transcripen/layout/scripts/jquery.min.js" %}></script>
+<script src={% static "transcripen/layout/scripts/jquery.backtotop.js" %}></script>
+<script src={% static "transcripen/layout/scripts/jquery.mobilemenu.js" %}></script>
+</body>
+</html>
+

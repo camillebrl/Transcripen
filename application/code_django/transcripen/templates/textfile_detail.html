@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block extraheader%}
+{% endblock %}
+{% block content %}
+{{ block.super }}
+<div id="comments" class="hoc clear container"> 
+    <!-- ################################################################################################ -->
+<h1 class="sectiontitle">{{ object.name }}</h1>
+
+
+<p id="content_file" class="content ">{{ object.text_file }}</p>
+</div>
+{% endblock %}

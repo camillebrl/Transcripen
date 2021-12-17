@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block extraheader%}
+{% endblock %}
+{% block content %}
+
+
+<div id="pageintro" class="hoc clear"> 
+{% block messages %}
+			{% if messages %}
+				<ul class="messagelist overlay light">{% for message in messages %}
+					<li  {% if message.tags == 'error'%} class="has-text-danger" {%elif message.tags == 'debug'%} class="has-text-primary" style=''{% elif message.tags == 'success' %} class='has-text-link'{%endif%}>{{ message|capfirst }}</li>
+					{% endfor %}
+					<!--<li class='has-text-link'> Essai</li>-->
+					</ul>
+					{% endif %}
+			{% endblock messages %}
+    <!-- ################################################################################################ -->
+    <article>
+      <!-- <p>Habitant morbi tristique</p> -->
+      <footer>
+        <ul class="nospace inline pushright">
+          <li><a class="btn inverse" href="{% url 'upload_file' %}">Transcrire l'audio reçu</a></li>
+        </ul>
+      </footer>
+    </article>
+    <!-- ################################################################################################ -->
+  </div>
+{% endblock %}

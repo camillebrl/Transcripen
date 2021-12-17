@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+{% block messages %}
+		        {% if messages %}
+		        <ul class="messagelist">{% for message in messages %}
+		         <li {% if message.tags != 'error' and message.tags != 'debug' %} class='has-text-{{ message.tags}}' {% elif message.tags == 'error'%} class="has-text-danger" {%elif message.tags == 'debug'%} class="has-text-primary" style=''{%endif%}>{{ message|capfirst }}</li>
+		        {% endfor %}</ul>
+		        {% endif %}
+	    	{% endblock messages %}
+{% if latest_file_list %}
+    <ul>
+    {% for file in latest_file_list %}
+    	<li><a href="/transcripen/{{file.id}}/"> {{ file.name}}></a>
+    	</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p> No file are available.</p>
+{% endif %}
+{% endblock %}
