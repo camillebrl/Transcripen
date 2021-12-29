@@ -1,11 +1,11 @@
 # Transcripen
 IMT Atlantique Project - connected pen for speech recognition
 
-As part of our specialization in the design of communicating objects (TAF CooC) in our training at ITM Atlantique, we had a project which aimed at creating value through the current needs of business and industry using communicating objects. In other words, we had to create a communicating object that meets a user need. 
- 
-Each member of the group being in daily contact with students and / or journalists, we noted, during our field study, a recurring problem with these two types of individuals, who are confronted daily with many conferences and many long oral exchanges, even tedious, and during which the people in question cannot be passive (need for reflection / understanding / bounce back on questions, ...) and take note of the entire oral. We therefore decided to answer the following problem during this project: How to allow the interlocutors of an exchange, with the help of a connected object, to recover all the information conveyed during the latter?
- 
-After our field studies, we imagined and prototyped a connected pen/microphone that records a speech when the user decides to do so (using a button) and sends the audio recorded on the pen/microphone in text format (transcribed) to the user's computer via an application. Thanks to this object, the user can totally concentrate during the speech and does not have to take note of the information conveyed. We have decided that our object will take the shape of a pen, since everyone use such an object during interviews / speeches. This prototyping phase of this pen / microphone connected was done using an agile method (SCRUM) over 3 weeks.
+As part of our specialization in design of communicating objects at IMT Atlantique, we had a project which aimed at creating value through the current needs of business and industry using communicating objects. In other words, we had to create a communicating object that meets a user need.
+
+Each member of the group being in daily contact with students and / or journalists, we noted, during our field study, a recurring problem with these two types of individuals, who are confronted daily with many conferences and many long oral exchanges, and during which they cannot be passive (need for reflection / understanding / bounce back on questions, ...) and take note of the entire oral. We therefore decided to answer the following issue during this project: How to allow, during an exchange, with the help of a connected object, the people to recover all the information conveyed?
+
+After our field studies, we imagined and prototyped a connected pen/microphone that records a speech when the user decides to do so (using a button) and sends the audio recorded on the pen/microphone in text format (transcribed) to the user's computer via an application. Thanks to this object, the user can totally concentrate during the speech and does not have to take note of the information conveyed. We have decided that our object will take the shape of a pen, since everyone uses such an object during interviews / speeches. This prototyping phase of this pen / microphone connected was done using an agile method (SCRUM) over 3 weeks.
 
 
 This Github repository is composed by:
